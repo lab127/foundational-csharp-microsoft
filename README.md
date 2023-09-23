@@ -1,6 +1,6 @@
 # freeCodeCamp.org - Foundational C# with Microsoft
 
-Link: (https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)[https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/]
+Link: [Foundational C# with Microsoft](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 
 Create new project
 
