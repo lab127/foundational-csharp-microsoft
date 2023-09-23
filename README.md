@@ -5,7 +5,7 @@ Link: (https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)[
 Create new project
 
 ```bash
-dotnet new console -o .
+dotnet new console -o ./projectName
 ```
 
 Create .gitignore
