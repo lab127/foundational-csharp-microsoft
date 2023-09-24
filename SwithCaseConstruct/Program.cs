@@ -1,4 +1,4 @@
-﻿int employeeLevel = 200;
+﻿int employeeLevel = 4200;
 string employeeName = "John Smith";
 
 string title = "";
@@ -14,7 +14,7 @@ switch (employeeLevel)
     case 300:
         title = "Manager";
         break;
-    case 400:
+    case >= 400: // test with operator
         title = "Senior Manager";
         break;
     default:
