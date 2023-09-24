@@ -15,7 +15,7 @@ string[] studentNames = new string[] { "Sophia", "Andrew", "Emma", "Logan", "Bec
 int[] studentScores = new int[10];
 
 
-Console.WriteLine("Student\t\tGrade\n");
+Console.WriteLine("Student\t\tExam Score\tOveral\tGrade\tExtra Credit\n");
 
 foreach (string name in studentNames)
 {
@@ -39,10 +39,11 @@ foreach (string name in studentNames)
     else
         continue;
 
-    int sumAssignmentScores = 0;
-    decimal currentStudentGrade = 0;
+    decimal sumAssignmentScores = 0;
     int countExtras = 0;
     int countAssignments = 0;
+    int sumExamScore = 0;
+    int sumExtraScore = 0;
     foreach (int score in studentScores)
     {
         countAssignments++;
@@ -50,16 +51,28 @@ foreach (string name in studentNames)
         if (countAssignments > examAssignments)
         {
             // extra bonus equal 10%
-            sumAssignmentScores += score / 10;
+            sumAssignmentScores += (decimal)score / 10;
+            sumExtraScore += score;
             countExtras++;
         }
         else
         {
             sumAssignmentScores += score;
+            sumExamScore += score;
         }
     }
 
-    currentStudentGrade = (decimal)sumAssignmentScores / examAssignments;
+    decimal currentStudentGrade = 0;
+    currentStudentGrade = sumAssignmentScores / examAssignments;
+
+    decimal studentExamScores = 0;
+    studentExamScores = (decimal)sumExamScore / examAssignments;
+
+    int studentExtraScores = 0;
+    studentExtraScores = sumExtraScore / countExtras;
+
+    decimal studentExtraCreditPoints = 0;
+    studentExtraCreditPoints = currentStudentGrade - studentExamScores;
 
     string currentStudentLetterGrade = "";
     if (currentStudentGrade >= 97)
@@ -89,7 +102,7 @@ foreach (string name in studentNames)
     else
         currentStudentLetterGrade = "F";
 
-    Console.WriteLine($"{currentStudent}:\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+    Console.WriteLine($"{currentStudent}\t\t{studentExamScores}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t{studentExtraScores} ({studentExtraCreditPoints})");
 }
 
 
