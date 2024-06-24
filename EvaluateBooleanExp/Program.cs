@@ -42,3 +42,12 @@ int saleAmount = 1001;
 // int discount = saleAmount > 1000 ? 100 : 50;
 // Console.WriteLine($"Discount: {discount}");
 Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");
+
+/**
+Code challenge: write code to display the result of a coin flip
+In this challenge, you'll implement a conditional operator to simulate a "coin flip". The resulting decision logic will display either heads or tails.
+*/
+var rand = new Random();
+string coinFlip = rand.Next(2) == 1 ? "head" : "tail";
+Console.WriteLine($"Coind fliped to: {coinFlip}");
+
