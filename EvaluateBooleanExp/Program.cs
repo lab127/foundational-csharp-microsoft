@@ -31,3 +31,14 @@ Console.WriteLine(a != b); // output: True
 string s1 = "Hello";
 string s2 = "Hello";
 Console.WriteLine(s1 != s2); // output: False
+
+
+// --------------------
+/**
+CONDITIONAL OPERATOR 
+*/
+// incline conditional operator or one line if else
+int saleAmount = 1001;
+// int discount = saleAmount > 1000 ? 100 : 50;
+// Console.WriteLine($"Discount: {discount}");
+Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");
