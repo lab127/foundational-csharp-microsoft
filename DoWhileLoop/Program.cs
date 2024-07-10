@@ -96,3 +96,65 @@ do
 } while (hero > 0 && monster > 0);
 
 Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
+
+
+// Manage user input during this challenge
+Console.WriteLine("-------------------------------------------");
+Console.WriteLine("| Manage user input during this challenge |");
+Console.WriteLine("-------------------------------------------");
+
+// nullable string
+// string? readResult;
+
+/*
+Console.WriteLine("Enter a string:");
+do
+{
+    readResult = Console.ReadLine();
+} while (readResult == null);
+*/
+/*
+bool validEntery = false;
+Console.WriteLine("Enter a string containing at least three characters:");
+
+do
+{
+    readResult = Console.ReadLine();
+    if (readResult != null)
+    {
+        if (readResult.Length >= 3)
+        {
+            validEntery = true;
+        }
+        else
+        {
+            Console.WriteLine("Invalid input! use at least 3 character.");
+        }
+    }
+} while (validEntery == false);
+*/
+
+// Code project 1 - write code that validates integer input
+Console.WriteLine("------------------------------------------------------------");
+Console.WriteLine("| Code project 1 - write code that validates integer input |");
+Console.WriteLine("------------------------------------------------------------");
+
+string? readIntInput;
+
+int numericValue = 0;
+bool validNumber = false;
+do
+{
+    readIntInput = Console.ReadLine();
+    validNumber = int.TryParse(readIntInput, out numericValue);
+    if (numericValue >= 5 && numericValue <= 10)
+    {
+        validNumber = true;
+        Console.WriteLine($"your numeric value input: {numericValue}");
+    }
+    else
+    {
+        Console.WriteLine("Invalid input! input must be a number between 5 and 10");
+        validNumber = false;
+    }
+} while (validNumber == false);
