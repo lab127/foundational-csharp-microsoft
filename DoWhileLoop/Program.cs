@@ -48,7 +48,7 @@ Print the amount of health the hero lost and their remaining health.
 Continue this sequence of attacking until either the monster's health or hero's health is zero or less.
 Print the winner.
 */
-
+/*
 Random random = new Random();
 int heroHealthPoint = 10;
 int monsterHealthPoint = 10;
@@ -96,7 +96,8 @@ do
 } while (hero > 0 && monster > 0);
 
 Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
-
+*/
+// hero end
 
 // Manage user input during this challenge
 // Console.WriteLine("-------------------------------------------");
@@ -161,7 +162,7 @@ do
 } while (validNumber == false);
 
 */
-
+/*
 Console.WriteLine("------------------------------------------------------------");
 Console.WriteLine("| Code project 2 - write code that validates string input |");
 Console.WriteLine("------------------------------------------------------------");
@@ -185,3 +186,50 @@ do
     }
 
 } while (validString == false);
+*/
+
+Console.WriteLine("------------------------------------------------------------");
+Console.WriteLine("| Code project 3 - Write code that processes the contents of a string array |");
+Console.WriteLine("------------------------------------------------------------");
+
+
+string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
+int stringsCount = myStrings.Length;
+
+string myString = "";
+int periodLocation = 0;
+
+for (int i = 0; i < stringsCount; i++)
+{
+    myString = myStrings[i];
+    periodLocation = myString.IndexOf(".");
+
+    string mySentence;
+
+    // extract sentences from each string and display them one at a time
+    while (periodLocation != -1)
+    {
+
+        // first sentence is the string value to the left of the period location
+        mySentence = myString.Remove(periodLocation);
+
+        // the remainder of myString is the string value to the right of the location
+        myString = myString.Substring(periodLocation + 1);
+
+        // remove any leading white-space from myString
+        myString = myString.TrimStart();
+
+        // update the comma location and increment the counter
+        periodLocation = myString.IndexOf(".");
+
+        Console.WriteLine(mySentence);
+    }
+
+    mySentence = myString.Trim();
+    Console.WriteLine(mySentence);
+}
+
+string testString = "I like pizza. I like roast chicken. I like salad";
+testString = testString.Substring(13);
+testString = testString.TrimStart();
+Console.WriteLine(testString.Trim());
