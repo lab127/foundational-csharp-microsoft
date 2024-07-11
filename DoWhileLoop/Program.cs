@@ -99,9 +99,9 @@ Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
 
 
 // Manage user input during this challenge
-Console.WriteLine("-------------------------------------------");
-Console.WriteLine("| Manage user input during this challenge |");
-Console.WriteLine("-------------------------------------------");
+// Console.WriteLine("-------------------------------------------");
+// Console.WriteLine("| Manage user input during this challenge |");
+// Console.WriteLine("-------------------------------------------");
 
 // nullable string
 // string? readResult;
@@ -135,6 +135,7 @@ do
 */
 
 // Code project 1 - write code that validates integer input
+/*
 Console.WriteLine("------------------------------------------------------------");
 Console.WriteLine("| Code project 1 - write code that validates integer input |");
 Console.WriteLine("------------------------------------------------------------");
@@ -158,3 +159,29 @@ do
         validNumber = false;
     }
 } while (validNumber == false);
+
+*/
+
+Console.WriteLine("------------------------------------------------------------");
+Console.WriteLine("| Code project 2 - write code that validates string input |");
+Console.WriteLine("------------------------------------------------------------");
+
+string? readInput;
+bool validString = false;
+do
+{
+    Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
+    readInput = Console.ReadLine();
+    string? inputValue = readInput.Trim().ToLower();
+    string[] validatedInput = { "administrator", "manager", "user" };
+    if (validatedInput.Contains(inputValue))
+    {
+        validString = true;
+        Console.WriteLine($"Your input value ({readInput}) has been accepted.");
+    }
+    else
+    {
+        Console.WriteLine($"The role name that you entered, \"{readInput}\" is not valid. Enter your role name (Administrator, Manager, or User)");
+    }
+
+} while (validString == false);
